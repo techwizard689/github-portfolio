@@ -7,18 +7,18 @@
   <title>Oliver Mannion</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="favicon.ico" />
-  <a rel="me" href="https://infosec.exchange/@techwizard689">Mastodon</a>
-  <script src="https://kit.fontawsome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/e8453eb5d6.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <div id="header">
     <div class="container">
         <nav>
+          <img src="images/logo.png" class="logo">
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li> 
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li> 
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
         <div class="header-text">
@@ -32,7 +32,7 @@
   <div class="container">
     <div class="row">
       <div class="about-col-1">
-        <img src="images/placeholder.jpg">
+        <img src="images/header.png">
       </div>
       <div class="about-col-2">
         <h1 class="sub-title">About Me</h1>
@@ -102,6 +102,35 @@
         <a href="#" class="btn">More</a>
     </div>
 </div>
+<!-----contact----->
+<div id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="contact-left">
+        <h1 class="sub-title">Contact Me</h1>
+        <p>enquiries@business.omannion.com</p>
+        <div class="social-icons">
+          <a href="https://linkedin.com/in/olivermannion7"><i class="fa-brands fa-square-linkedin"></i></a>
+          <a href="https://github.com/techwizard689"><i class="fa-brands fa-github"></i></i></a>
+          <a href="https://bsky.app/profile/omannion.com"><i class="fa-brands fa-bluesky"></i></i></a>
+          <a href="https://infosec.exchange/@techwizard689"><i class="fa-brands fa-mastodon"></i></a>
+        </div>
+        <a href="images/GitHub-Website-CV.pdf" download class="btn btn2">Download CV</a>
+      </div>
+      <div class="contact-right"></div>
+      <form name="submit-to-google-sheet">
+        <input type="text" name="Name" placeholder="Your Name" required>
+        <input type="email" name="Email" placeholder="Your Email" required>
+        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+        <button type="submit" class="btn btn2">Submit</button>
+      </form>
+      <span id="msg"></span>
+    </div>
+  </div>
+  <div class="copyright">
+    <p>Copyright © Oliver Mannion</p>
+  </div>
+</div>
 
 <script>
 
@@ -121,5 +150,34 @@
 
 </script>
 
+<script>
+
+    var sidemenu = document.getElementById("sidemenu")
+
+    function openmenu(){
+      sidemenu.style.right = "0";
+    }
+    function closemenu(){
+      sidemenu.style.right = "-200";
+    }
+</script>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxL91RytKQwsfTioOYXVp5XYvXpqYZx477zqB7A9z9irtj9MgBT7BOLpnA5ciZ6g2Y4/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg = document.getElementById("msg")
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        msg.innerHTML= "Message sent succsessfully"
+        setTimeout(function(){
+          msg.innerHTML = ""
+        },5000)
+        form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
 </body>
 </html>
