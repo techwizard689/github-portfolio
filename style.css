@@ -264,6 +264,7 @@ form .btn2{
     text-align:center;
     background: #403d3d;
     font-weight: bold;
+    list-style-type: none;
 }
 .copyright a{
     text-decoration: none;
