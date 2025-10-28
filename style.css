@@ -227,7 +227,7 @@ nav ul li a:hover::after{
     transition: transform 0.5s;
 }
 .social-icons a:hover{
-    color: #273DFF;
+    color: #4781f9;
     transform: translateY(-5px);
 }
 .btn.btn2{
@@ -270,8 +270,9 @@ form .btn2{
 }
 .copyright a{
     text-decoration: none;
-    color:#1c4494
+    color:#4169E1
 }
 .copyright a:hover{
+    text-decoration: none;
     color:#468dc3
 }
