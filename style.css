@@ -267,10 +267,12 @@ form .btn2{
     list-style-type: none;
 }
 .copyright a{
+    list-style-type: none;
     text-decoration: none;
     color: #fff
 }
 .copyright a:hover{
+    list-style-type: none;
     text-decoration: none;
     transition: 0.25s;
     color:#468dc3
