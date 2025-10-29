@@ -274,7 +274,6 @@ form .btn2{
     transition: 0.25s;
     color:#468dc3
 }
-
 /* Small Mobile Devices (up to 360px) */
 @media only screen and (max-width: 360px) {
     .container{
